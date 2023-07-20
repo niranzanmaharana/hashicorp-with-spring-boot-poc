@@ -1,0 +1,25 @@
+server:
+    port: 8080
+spring:
+    application:
+        name: spring-boot-hashicorp-vault-sample
+    cloud:
+        vault:
+            token: hvs.xritl0hhJE7JXUiWdy8KUQ8O
+            uri: http://localhost:8200
+    config:
+        import: vault://
+
+    datasource:
+        driver-class-name: ${spring.datasource.driver-class-name}
+        password: ${spring.datasource.password}
+        url: ${spring.datasource.url}
+        username: ${spring.datasource.username}
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL8Dialect
+                format_sql: true
+        show-sql: false
